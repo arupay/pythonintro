@@ -392,4 +392,81 @@ def func2(x,y):
     return x*y, x+y
 
 print(func2(3,2))
-(6,5)
+#(6,5)
+
+#destructuring function values
+r1,r2 = func2(10,11)
+print(r1,r2)
+#110 21
+
+def func3(x):
+    def func2():
+        print(x)
+          
+    return func2
+
+print(func3(3)())
+#will print 3 and None, none because there is no console value to func2() that is returned, 
+
+
+
+def funcs_args(*args, **kwargs):
+    pass
+
+x = [4,5,1,3,4,9,10,33]
+
+print(x) #PRINTS LIST
+print(*x) #UNPACK ELEMENTS IN LIST
+
+
+#In dictionaries we can unpack with **{'x':2, 'y':5}
+
+
+#Exceptions (Throw)
+
+# raise Exception('bad')
+
+#TRY /Except/Block Python blocks
+
+try: 
+    x=7/0
+except Exception as e:
+    print(e)
+#prints division by zero
+
+try:
+    y=10/0
+except Exception as e:
+    print(e)
+finally:
+    print('finally')
+
+#Lambda is a ONELINE ANONYMOSU FUNCTION!
+x11 = lambda x, y:  x+y
+x22 = lambda x: x +1
+
+print(x11(2,31))
+#33 
+print(x22(5))
+#6
+
+#f strings are template literals
+
+eff_string = f'hi {1+2}'
+print(eff_string)
+#hi 3
+
+
+#Ternary in python
+
+is_raining = True
+if is_raining:
+    weather_message = "It is raining!"
+else:
+    weather_message = "It is not raining enjoy your day"
+print(weather_message)
+
+is_hailing = True
+
+weather_message_two = "It is hailing" if is_hailing else "It is not hailing"
+print(weather_message_two)
